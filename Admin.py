@@ -1,6 +1,6 @@
 from tkinter import *
 import AdminFunction
-import mysql.connector 
+import mysql.connector
 
 
 class admin(AdminFunction.adminfunc):
@@ -16,7 +16,7 @@ class admin(AdminFunction.adminfunc):
 
         myc = mydb.cursor()
         myc.execute("SELECT * FROM login")
-        
+
         for i in myc:
             if self.usr == i[0] and self.pas == i[1]:
                 flag = 0
@@ -30,7 +30,8 @@ class admin(AdminFunction.adminfunc):
                            relief="raised", height="5", width="100")
                 wc.grid(row=0, column=0, columnspan=5, sticky=N)
 
-                button1 = Button(self.frame2, text="Details", height="10",width="16", bg="white", command=lambda: detail())
+                button1 = Button(self.frame2, text="Details", height="10",
+                                 width="16", bg="white", command=lambda: detail())
                 button1.grid(row=1, column=0)
 
                 button2 = Button(
@@ -64,7 +65,6 @@ class admin(AdminFunction.adminfunc):
 
                 break
 
-                
             else:
                 flag = 1
             if flag == 1:
@@ -75,13 +75,13 @@ class admin(AdminFunction.adminfunc):
         self.frame3.destroy()
         self.frame3 = Frame(self.frame2)
         self.frame3.grid(row=2, column=0, columnspan=5, sticky=W)
-        super().newst(self.frame3) 
+        super().newst(self.frame3)
 
     def fee1(self):
         self.frame3.destroy()
         self.frame3 = Frame(self.frame2)
         self.frame3.grid(row=2, column=0, columnspan=5, sticky=W)
-        super().fee(self.frame3)  
+        super().fee(self.frame3)
 
     def aca1(self):
         self.frame3.destroy()
